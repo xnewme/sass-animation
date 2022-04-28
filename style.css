@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather:400,700|Roboto+Mono");
+body {
+  background: #52b3d9;
+  color: white;
+  overflow: hidden;
+  font-family: "Roboto Mono", monospace;
+}
+
+h1 {
+  padding-top: 20vh;
+  font-size: 8vw;
+  position: relative;
+  text-align: center;
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px hsla(100deg, 0%, 30%, 0.5);
+  z-index: 1000;
+  margin: 0;
+}
+
+.sun {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  width: 5rem;
+  height: 5rem;
+  background: #f5ab35;
+  border-radius: 50%;
+  box-shadow: 0 0 30px #f39c12;
+}
+
+.flowers {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.flower:nth-child(2) {
+  display: flex;
+  text-align: right;
+  padding-left: 40vw;
+  height: 120vh;
+}
+
+.flowers > .flower:nth-child(2) > div:nth-child(1) {
+  background: #d2527f;
+}
+
+.flower {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
+.flower_head {
+  height: 7rem;
+  width: 7rem;
+  background: #663399;
+  border-radius: 50%;
+  animation-name: var(--animation, head-grow);
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.flower_stem {
+  width: 0.5rem;
+  height: 100%;
+  background: #00b16a;
+  animation-name: var(--animation, stem-up);
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.flower_stem::before {
+  content: "";
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+  display: block;
+  background: #1e824c;
+  border-radius: 2em 0 2em 0em;
+  animation-name: var(--animation, move-me-up);
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+.slideIn {
+  transform: translateX(-5rem);
+  animation: slideIn 3s ease-out forwards;
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translateX(0);
+  }
+}
+.growUp {
+  transform: translateY(20rem);
+  animation: growUp 3s ease-out forwards;
+}
+
+@keyframes growUp {
+  100% {
+    transform: translateY(0);
+  }
+}
+.fadeIn {
+  opacity: 0;
+  animation: fadeIn 1s 2s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes move-me-up {
+  0% {
+    height: 0;
+    width: 0;
+    top: var(--h, 0);
+  }
+  100% {
+    height: var(--h, 3em);
+    width: var(--w, 3em);
+    top: 0;
+  }
+}
+@keyframes stem-up {
+  0% {
+    width: 0;
+    top: var(--h, 0);
+  }
+  100% {
+    width: var(--w, 0.5rem);
+    top: 0;
+  }
+}
+@keyframes head-grow {
+  0% {
+    height: 0;
+    width: 0;
+    top: var(--h, 0);
+  }
+  100% {
+    height: var(--h, 7em);
+    width: var(--w, 7em);
+    top: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
